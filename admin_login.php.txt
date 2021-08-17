@@ -23,6 +23,7 @@ session_start();
 <link rel="stylesheet" href="style/admin.css">
 </head>
 
+
 <body>
 	<div class="container">
 		<form action="admin_login.php" method="post">
