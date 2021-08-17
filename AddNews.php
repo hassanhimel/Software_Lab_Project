@@ -56,5 +56,27 @@
 </form>
 
 
+<script>
+  
+function validateform(){
+  var x = document.forms['categoryform']['title'].value;
+  var y = document.forms['categoryform']['description'].value;
+  var z = document.forms['categoryform']['date'].value;
+  var w= document.forms['categoryform']['category'].value;
+  if (x=="") {
+    alert('Title must be filled out!');
+    return false;
+  }
+  if (y=="") {
+    alert('Description must be filled out!');
+    return false;
+  }
+  
+   
+}
+
+</script>
+
+
 
 </div>
