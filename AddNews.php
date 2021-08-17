@@ -33,6 +33,25 @@
     <input type="file" name="thumbnail" class="form-control img-thumbnail" id="email">
   </div>
 
+   <!-- Choose Category -->
+
+   <div class="form-group">
+    <label for="email"> Category: </label>
+    <select class="form-control" name="category"> 
+
+    <?php
+      include('database/connection.php');
+      $query=mysqli_query($conn,"select * from category");
+      while ($row=mysqli_fetch_array($query)) {        
+    
+    ?>
+      <option value="<?php echo $row['category_name'];?>"><?php echo $row['category_name'];?> </option>
+      
+    <?php } ?>
+
+    </select>
+</div>
+
 
 
 </div>
