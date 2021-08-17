@@ -43,3 +43,33 @@ include('include/header.php');
 
 </div>
 
+<?php
+include('include/footer.php')
+
+?>
+<!-- -->
+
+<?php
+
+include('database/connection.php');
+if (isset($_POST['submit'])) {
+
+  $category_name=$_POST['category'];
+  $des=$_POST['des'];
+  
+  $query=mysqli_query($conn,"insert into category(category_name,des)values('$category_name','$des')");
+
+  if ($query) {
+    echo "<script> alert('Category Add Successfully')</script>";
+
+    echo "<script>window.location='http://localhost/newsportal/category.php';</script>";
+
+  }else{
+    echo "<script> alert('Please Try Again')</script>";
+
+  }
+}
+
+
+?>
+
