@@ -52,6 +52,9 @@
     </select>
 </div>
 
+<input type="submit" name="submit" class="btn btn-primary" value="Add News">
+</form>
+
 
 
 </div>
