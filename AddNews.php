@@ -5,3 +5,12 @@
       <li class="breadcrumb-item active">Add News</li>
     </ul>
   </div>
+
+<div style ="width: 70% ; margin-left: 25%;">
+
+<form action="AddNews.php" method="post" enctype="multipart/form-data" name="categoryform"onsubmit="return validateform() ">
+		<h1>Add News</h1>
+		<hr>
+
+
+</div>
