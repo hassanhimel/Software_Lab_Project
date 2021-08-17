@@ -74,9 +74,34 @@ function validateform(){
   
    
 }
-
 </script>
 
-
-
 </div>
+
+<?php
+include('include/footer.php')
+
+?>
+
+<?php 
+include('database/connection.php');
+if (isset($_POST['submit'])) {
+  $title=$_POST['title'];
+       $description=$_POST['description'];
+           $date=$_POST['date'];
+               $thumbnail=$_FILES['thumbnail']['name'];
+               $tmp_thumbnail=$_FILES['thumbnail']['tmp_name'];
+                   $category=$_POST['category'];
+              move_uploaded_file($tmp_thumbnail,"images/$thumbnail");
+
+$query=mysqli_query($conn,"insert into news(title,description,date,category,thumbnail)values('$title','$description','$date','$category','$thumbnail')");
+
+   if ($query) {
+     echo "<script>alert('News Uploaded Successfully !!') </script>";
+     echo "<script>window.location='http://localhost/newsportal/news.php';</script>";
+   }else{echo "<script>alert('Please Try Again !!') </script>";}
+
+}
+
+
+?>
