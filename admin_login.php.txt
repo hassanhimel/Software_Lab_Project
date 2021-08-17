@@ -1,5 +1,7 @@
+<?php
+session_start();
 
-
+?>
 
 
 <!DOCTYPE html>
@@ -20,7 +22,6 @@
 <!-- custom css -->
 <link rel="stylesheet" href="style/admin.css">
 </head>
-
 
 <body>
 	<div class="container">
@@ -49,3 +50,27 @@
 
 
 </html>
+
+<?php
+include('database/connection.php');
+
+if (isset($_POST['submit'])) {
+	 $email=$_POST['email'];
+	 $password=$_POST['password'];
+
+	 $query=mysqli_query($conn,"select * from admin_login where email='$email' AND password='$password' ");
+	 if ($query) {
+	 	if (mysqli_num_rows($query)>0) {
+	 		
+            $_SESSION['email']=$email;
+
+	 		header('location:home.php');
+	 	}else{
+
+	 		echo "<script> alert('Invalid ,Please Try Again')</script>";
+	 	}
+	 }
+
+}
+
+?>
