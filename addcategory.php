@@ -28,6 +28,18 @@ include('include/header.php');
   <input type="submit" name="submit" class="btn btn-primary" value="Add Category">
 </form>
 
+<script>
+  
+ function validateform(){
+  var x = document.forms['categoryform']['category'].value;
+  if (x=="") {
+    alert('Carefully Fillup !');
+    return false;
+  }
+   
+ }
+
+</script> 
 
 </div>
 
