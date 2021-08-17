@@ -12,5 +12,27 @@
 		<h1>Add News</h1>
 		<hr>
 
+    <div class="form-group">
+    <label for="email"> Title: </label>
+    <input type="text" name="title" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+  <label for="comment">Description:</label>
+  <textarea class="form-control" rows="5" name="description" id="comment"></textarea>
+   </div>
+
+  <div class="form-group">
+    <label for="email"> Date: </label>
+    <input type="date" name="date" class="form-control" id="email">
+  </div>
+  
+  
+<div class="form-group">
+    <label for="email"> Thumbnail: </label>
+    <input type="file" name="thumbnail" class="form-control img-thumbnail" id="email">
+  </div>
+
+
 
 </div>
