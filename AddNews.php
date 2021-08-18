@@ -1,4 +1,15 @@
 
+<?php
+session_start();
+if ($_SESSION['email']==true) {
+  
+}else
+  header('location:admin_login.php');
+  $page='prductt';
+
+include('include/header.php');
+
+?>
 
 
 <div style="margin-left:17%; width: 80%; ">
