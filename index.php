@@ -52,6 +52,21 @@
     </div>
   </div>
 </header>
+
+<div class="nav-scroller py-1 mb-2">
+        
+        </nav>
+      </div>
+
+     <div class="card" style="width:100%; height:300px;" >
+      <img class="card-img-top" src="https://content.thriveglobal.com/wp-content/uploads/2018/03/news-1.jpg" alt="Card image" height="200" >
+      <div class="card-img-overlay">
+        <h4 class="card-title">Online News</h4>
+        <p class="card-text">This is a News portal.</p>
+       
+      </div>
+    </div>
+    <div class="row mb-2">
   </body>
 
 </html>
