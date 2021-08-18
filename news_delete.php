@@ -8,5 +8,4 @@ $id=$_GET['del'];
  	echo "<script>window.location='http://localhost/newsportal/news.php';</script>";
  }else{
  	echo "Please Try Again";
- }
-?>
+ }?>
