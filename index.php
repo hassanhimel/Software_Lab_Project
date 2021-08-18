@@ -80,6 +80,83 @@
       
 
     ?>
+
+
+<?php } ?>
+        
+        </div>
+    
+        <main role="main" class="container">
+          <div class="row">
+            <div class="col-md-8 blog-main">
+              <h3 class="pb-3 mb-4 font-italic border-bottom">
+                
+              </h3>
+    
+    
+              <?php
+    
+           include('database/connection.php');
+    
+               $page=$_GET['page'];
+               if($page=="" || $page==1){
+                $page1=0;
+               }
+               else{
+                  $page1=($page*5)-5;
+    
+               }
+               
+            $query=mysqli_query($conn,"select * from news limit $page1,5 ");
+             while($row=mysqli_fetch_array($query)){
+              ?>
+              <div class="blog-post">
+                <h4 class="blog"> <a href="single_page.php?single=<?php echo $row['id'];?>"><?php echo $row['title']; ?> </a></h4>
+                <p class="blog-post-meta"><?php echo $row['date']; ?> <a href="#"><?php echo $row['category'];?></a></p>
+    
+                <p><img class="img img-thumbnail"  src="images/<?php echo $row['thumbnail'];?>"  width="250" height="200" > </p>
+                <hr>
+                
+                <blockquote>
+                  <?php echo substr($row['description'],0,300 ) ;?>
+                   <a href="single_page.php?single=<?php echo $row['id'];?> " class="btn btn-primary btn-sm">Read More</a>
+                </blockquote>
+                
+                  
+                </ol>
+               
+              </div><!-- /.blog-post -->
+      
+              <?php } ?>
+    
+               
+                 <ul class="pagination">
+                   <li class="page-item disabled">
+                     <a href="#" class="page-link" >Prev</a>
+                   </li>
+                  <?php
+    
+           $sql=mysqli_query($conn,"select * from news");
+           $count=mysqli_num_rows($sql);
+           $a=$count/5;
+            ceil($a);
+            for ($b=1; $b <=$a ; $b++) { 
+              ?>
+          
+                 
+             <li class="page-item"><a class="page-link" href="index.php?page=<?php echo $b;?>"><?php echo $b; ?></a></li>
+              
+           
+              <?php 
+            }
+           ?>
+                    <li class="page-item disabled">
+                     <a href="#" class="page-link" >Next</a>
+                   </li>
+           </ul>
+    
+    
+           
   </body>
 
 </html>
