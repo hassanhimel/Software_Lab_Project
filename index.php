@@ -24,4 +24,34 @@
     
   </head>
 
+  <body> 
+  <div class="container">
+
+
+<header class="blog-header py-3">
+  <div class="row flex-nowrap justify-content-between align-items-center">
+    <div class="col-4 pt-1">
+      <a class="text-muted" href="#"> <div id="google_translate_element"></div></a>
+    </div>
+    <div class="col-4 text-center">
+      <a class="blog-header-logo text-dark" href="#">Online News</a>
+    </div>
+    <div class="col-4 d-flex justify-content-end align-items-center">
+
+    
+     <form action="search.php" method="post">
+   <div class="input-group sm-3">
+   
+    <input type="text" name="search" class="form-control" placeholder="Search">
+    <div class="input-group-append">
+      <button class="btn btn-success" name="submit" type="submit">Go</button> 
+    </div>
+  </div>
+
+</form>
+    </div>
+  </div>
+</header>
+  </body>
+
 </html>
