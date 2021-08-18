@@ -67,6 +67,19 @@
       </div>
     </div>
     <div class="row mb-2">
+
+    <?php
+    include('database/connection.php');
+     $query1 =mysqli_query($conn,"select * from news order by id desc limit 1,2 ");
+      while($row=mysqli_fetch_array($query1)){
+         $category=$row['category'];
+         $date=$row['date'];
+         $title=$row['title'];
+         $thumbnail=$row['thumbnail'];
+
+      
+
+    ?>
   </body>
 
 </html>
