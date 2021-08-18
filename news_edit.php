@@ -40,3 +40,35 @@ function validateform(){
 include('include/footer.php');
 
 ?>
+
+<?php 
+include('database/connection.php');
+
+include('database/connection.php');
+if (isset($_POST['submit'])) {
+  
+  $id=$_POST['id'];
+  $title=$_POST['title'];
+       $description=$_POST['description'];
+           $date=$_POST['date'];
+               $thumbnail=$_FILES['thumbnail']['name'];
+               $tmp_thumbnail=$_FILES['thumbnail']['tmp_name'];
+                   $category=$_POST['category'];
+              move_uploaded_file($tmp_thumbnail,"images/$thumbnail");
+
+             $sql=mysqli_query($conn,"update news set title='$title',description='$description',date='$date',thumbnail='$thumbnail',category='$category' where id='$id' ");
+
+    if (sql) {
+      echo "<script> alert('news updated') </script> "; 
+     
+
+    echo "<script>window.location='http://localhost/newsportal/news.php';</script>"; 
+
+      
+    }else{
+      echo "News Not Update";
+    }
+
+}
+
+?>
