@@ -66,5 +66,33 @@ function validateform(){
 	
 </div>
 
+<?php 
 
+include('database/connection.php');
+	if (isset($_POST['submit'])) {
+		$id=$_POST['id'];
+		$subcategory=$_POST['subcategory'];
+		$des=$_POST['des'];
+
+		$query1=mysqli_query($conn,"update subcategory set subcategory_name='$subcategory',des='$des' where id='$id' ");
+
+		if (query1) {
+			echo "<script> alert('Sub-category updated successfully') </script> "; 
+			header('location:categories.php');
+
+		echo "<script>window.location='http://localhost/newsportal/categories.php';</script>"; 
+
+ 	    
+		}else{
+			echo "Sub Category Not Update";
+		}
+
+	}
+
+?>
+
+<?php 
+	include('include/footer.php');
+
+?>
 
